@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>爺爺的長輩圖</title>
+  <style>
+    body {
+      background: #2e2b27;
+      font-family: 'Courier New', Courier, monospace;
+      color: #f2e9dc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    .container {
+      background: #3b362f;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px #00000088;
+      max-width: 600px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      background: #d4a373;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>爺爺的長輩圖</h1>
+    <p>請輸入密碼以解鎖下一步：</p>
+    <input type="text" id="passwordInput" placeholder="輸入密碼..." />
+    <button onclick="checkPassword()">提交</button>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value.trim();
+      const message = document.getElementById("message");
+      if (input === "2741") {
+        message.innerHTML = "🎉 破解成功 真是太強啦!";
+        message.style.color = "#90ee90";
+      } else {
+        message.innerHTML = "❌ 密碼錯誤，再試一次。";
+        message.style.color = "#ff6666";
+      }
+    }
+  </script>
+</body>
+</html>
