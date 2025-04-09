@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -50,27 +50,38 @@
       margin-top: 20px;
       font-size: 18px;
     }
+    .result-image {
+      margin-top: 20px;
+      display: none;
+      max-width: 100%;
+      border-radius: 12px;
+      border: 3px solid #f2e9dc;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>爺爺的長輩圖</h1>
-    <p>請輸入密碼以解鎖下一步：</p>
+    <p>請輸入密碼以解鎖：</p>
     <input type="text" id="passwordInput" placeholder="輸入密碼..." />
     <button onclick="checkPassword()">提交</button>
     <div id="message" class="message"></div>
+    <img id="resultImage" class="result-image" src="https://videos.openai.com/vg-assets/assets%2Ftask_01jrcsr4mzekwvm2q6e7zy59mh%2Fimg_1.webp?st=2025-04-09T07%3A46%3A08Z&se=2025-04-15T08%3A46%3A08Z&sks=b&skt=2025-04-09T07%3A46%3A08Z&ske=2025-04-15T08%3A46%3A08Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=gBVeEu5kXqQHnZraDEBJR8NGTPJOB7JT2i7UiRTeuw4%3D&az=oaivgprodscus" alt="結果圖片" />
   </div>
 
   <script>
     function checkPassword() {
       const input = document.getElementById("passwordInput").value.trim();
       const message = document.getElementById("message");
+      const image = document.getElementById("resultImage");
       if (input === "2741") {
-        message.innerHTML = "🎉 破解成功 真是太強啦!";
+        message.innerHTML = "🎉 終於打開了，但這種東西我根本不想要阿!";
         message.style.color = "#90ee90";
+        image.style.display = "block";
       } else {
         message.innerHTML = "❌ 密碼錯誤，再試一次。";
         message.style.color = "#ff6666";
+        image.style.display = "none";
       }
     }
   </script>
